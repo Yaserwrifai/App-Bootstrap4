@@ -1,0 +1,880 @@
+<html lang="en">
+
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container-fluid ">
+    <!-- section1-------------------------------------------------------------------------------------------------------- -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/flag.png" alt="palestine" width="40">
+          <span class="ml-2 h5 mb-0 text-primary1 border-right pr-3">PALESTINE</span>
+        </a>
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle border rounded border-success px-3 py-2 nav1" href="#" id="tripsDropdown"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Trips
+              </a>
+              <div class="dropdown-menu" aria-labelledby="tripsDropdown">
+                <a class="dropdown-item" href="#">ALQUDS</a>
+                <a class="dropdown-item" href="#">HAIFA</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">YAFA</a>
+                <a class="dropdown-item" href="#">AKKO</a>
+                <a class="dropdown-item" href="#">NABLUS</a>
+                <a class="dropdown-item" href="#">MORE…</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="/search.php" method="GET">
+            <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search">
+            <button class="btn btn-info my-2 my-sm-0 mr-2" type="submit">Search</button>
+            <button class="btn btn-outline-info my-2 my-sm-0" type="button" data-toggle="modal"
+              data-target="#loginModal">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Spacer for fixed-top -->
+    <div style="height: 70px;"></div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content rounded">
+          <div class="modal-header bg-info">
+            <h5 class="modal-title text-white" id="loginModalLabel">Login</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body p-4">
+            <form action="/login.php" method="POST">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" required>
+                <small class="form-text text-muted">
+                  We'll never share your email.
+                </small>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password"
+                  required>
+              </div>
+              <div class="form-group custom-control custom-switch">
+                <input type="checkbox" id="rememberToggle" name="remember" class="custom-control-input">
+                <label class="custom-control-label" for="rememberToggle">
+                  Remember me
+                </label>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-info">Login</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+        <li data-target="#demo" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="images//al-quds.jpg" alt="qudscity">
+          <!-- Social media icons fixed right-bottom -->
+          <div class="d-flex flex-column align-items-center"
+            style="position: fixed; right: 2rem; bottom: 5rem; z-index: 1030;">
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+            <a href="#" class="social-icon text-white bg p-3"><i class="fab fa-instagram fa-lg"></i></a>
+          </div>
+          <div class="carousel-caption bg bg-opacity-50 rounded p-3">
+            <h3>ALQUDS</h3>
+            <p>Alquds bridges faith, culture</p>
+            <button class="btn btn-primary">Visit Us</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="images/haifa.jpg" alt="haifa">
+          <!-- Social media icons fixed right-bottom -->
+          <div class="d-flex flex-column align-items-center"
+            style="position: fixed; right: 2rem; bottom: 5rem; z-index: 1030;">
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+            <a href="#" class="social-icon text-white bg p-3"><i class="fab fa-instagram fa-lg"></i></a>
+          </div>
+          <div class="carousel-caption bg bg-opacity-50 rounded p-3">
+            <h3>HAIFA</h3>
+            <p>Haifa sustains Palestinian heritage</p>
+            <button class="btn btn-primary">Visit Us</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="images/akko.jpg" alt="Akko">
+          <!-- Social media icons fixed right-bottom -->
+          <div class="d-flex flex-column align-items-center"
+            style="position: fixed; right: 2rem; bottom: 5rem; z-index: 1030;">
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+            <a href="#" class="social-icon text-white bg p-3"><i class="fab fa-instagram fa-lg"></i></a>
+          </div>
+          <div class="carousel-caption bg bg-opacity-50 rounded p-3">
+            <h3>AKKO</h3>
+            <p>Akko preserves history, culture.</p>
+            <button class="btn btn-primary">Visit Us</button>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <img src="images/nablus.jpg" alt="Nablus">
+          <!-- Social media icons fixed right-bottom -->
+          <div class="d-flex flex-column align-items-center"
+            style="position: fixed; right: 2rem; bottom: 5rem; z-index: 1030;">
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="social-icon text-white mb-2 bg p-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+            <a href="#" class="social-icon text-white bg p-3"><i class="fab fa-instagram fa-lg"></i></a>
+          </div>
+          <div class="carousel-caption bg bg-opacity-50 rounded p-3">
+            <h3>NABLUS</h3>
+            <p>Nablus blends tradition, commerce</p>
+            <button class="btn btn-primary">Visit Us</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+    <!-- section1 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+   
+    <!--section2-----------------------------------------------------------------------------------------------  -->
+    <div class="jumbotron  bg py-4">
+      <div class="container-fluid">
+        <h2 class="text-primary text-primary1">WELCOME</h2>
+        <p class="font-weight-bold ">Are you planning to visit Palestine? We offer the ultimate tour in
+          Palestine. Covering all your needs from a one-day trip to a 10-day dream vacation. We will take care of all
+          your hotels. 24/7 Customer Service.</p>
+        <button type="button" class="btn btn-light text-primary font-weight-bold">Learn More</button>
+      </div>
+    </div>
+    <!-- // Section2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+
+    <!-- Section 3 -->
+    <div class="jumbotron bg-info mb-4">
+      <p class="text-white text-center text-primary1  display-4">Popular Destinations in Palestine</p>
+    </div>
+
+   
+    <!-- Section 4 -->
+    <div class="container-fluid custom-container  ">
+      <div id="accordion">
+        <!-- Al-Aqsa Mosque -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              Al-Aqsa Mosque
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+              One of Islam's holiest sites, located on the Haram al-Sharif (Noble Sanctuary).
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Church of the Nativity -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              Church of the Nativity – Bethlehem
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Believed to be the birthplace of Jesus Christ. Major pilgrimage site for Christians worldwide.
+              Listed as a UNESCO World Heritage Site.
+            </div>
+          </div>
+        </div>
+
+        <!-- Hebron – Ibrahimi Mosque -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+              Hebron (Al-Khalil) – Ibrahimi Mosque
+            </a>
+          </div>
+          <div id="collapseThree" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+              Sacred to Muslims, Jews, and Christians — believed to house the tombs of Abraham, Sarah, Isaac, Jacob, and
+              others.
+              A site of religious and political significance.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- //section4  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+    <!-- section 5 --------------------------------------------------------------------------------------------------------->
+    <div class="jumbotron bg py-1 text-light my-3">
+      <h2 class="text-center">Translate from Arabic to English</h2>
+      <p class="text-light">Write and Translate <span class="text-primary">Press Here</span></p>
+      <button class="btn btn-light text-primary my-2 btn-copy " onclick="alert('Copied!')" data-toggle="tooltip"
+        data-placement="top" title="Copy to clipboard">
+        Copy
+      </button>
+      <textarea class="form-control my-3" rows="5" placeholder="Translate"></textarea>
+    </div>
+    <!--  -->
+    <div class="jumbotron bg py-1 text-light">
+      <h2 class="text-center">Translate from Arabic to French</h2>
+      <p class="text-light">Write and Translate <span class="text-primary">Press Here</span></p>
+      <button class="btn btn-light text-primary my-2 btn-copy " onclick="alert('Copied!')" data-toggle="tooltip"
+        data-placement="top" title="Copy to clipboard">
+        Copy
+      </button>
+      <textarea class="form-control my-3" rows="5" placeholder="Translate"></textarea>
+    </div>
+    <!--  -->
+    <div class="jumbotron bg py-1 text-light">
+      <h2 class="text-center">Translate from Arabic to German</h2>
+      <p class="text-light">Write and Translate <span class="text-primary">Press Here</span></p>
+      <button class="btn btn-light text-primary my-2 btn-copy " onclick="alert('Copied!')" data-toggle="tooltip"
+        data-placement="top" title="Copy to clipboard">
+        Copy
+      </button>
+      <textarea class="form-control my-3" rows="5" placeholder="Translate"></textarea>
+    </div>
+    <!--  --> <!-- //5++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+
+    <!-- 6 --------------------------------------------------------------------------------------------->
+    <div class="fixed-bg-section rounded">
+    </div>
+
+    <div
+      class="container-fluid bg text-primary  d-flex align-items-center justify-content-center text-center py-md-3 py-sm-2">
+      <h1 class=" font-weight-bold text-primary1">POPULAR DESTINATION IN PALESTINE</h1>
+    </div>
+    <!-- //6 -->
+    <!-- Cards Section  7----------------------------------- -->
+    <div class="container-fluid my-5">
+      <div class="row justify-content-around">
+
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex">
+          <div class="card custom-card h-100 gradient-tl-br w-100 ">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/aqsa3.jpg" class="card-img-top img-thumbnail" alt="Jerusalem" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Jerusalem</h5>
+              <p class="card-text">Sacred to three religions</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex">
+          <div class="card custom-card h-100 gradient-br-tl w-100">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/lahaem.jpg" class="card-img-top img-thumbnail" alt="Bethlehem" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Bethlehem</h5>
+              <p class="card-text">Birthplace of Jesus Christ</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex">
+          <div class="card custom-card h-100 gradient-tl-br w-100">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/Hebron.jpg" class="card-img-top img-thumbnail" alt="Hebron" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Hebron</h5>
+              <p class="card-text">Ancient city, Abraham's tomb</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex">
+          <div class="card custom-card h-100 gradient-br-tl w-100">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/nablus2.jpg" class="card-img-top img-thumbnail" alt="Nablus" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Nablus</h5>
+              <p class="card-text">Historic markets and soap</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex">
+          <div class="card custom-card h-100 gradient-tl-br w-100">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/Ramallah.jpg" class="card-img-top img-thumbnail" alt="Ramallah" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Ramallah</h5>
+              <p class="card-text">Political and cultural hub</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex">
+          <div class="card custom-card h-100 gradient-br-tl w-100 ">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/gaza.jpg" class="card-img-top img-thumbnail" alt="Gaza City" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Gaza City</h5>
+              <p class="card-text">Coastal city, resilient people</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 7 (with extra side margin) -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex ml-md-3 mr-md-3 ">
+          <div class="card custom-card h-100 gradient-tl-br w-100">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/jenin.jpg" class="card-img-top img-thumbnail" alt="Jenin" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Jenin</h5>
+              <p class="card-text">Northern city with resistance</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 (with extra side margin) -->
+        <div class="col-sm-6 col-md-4 mb-4 d-flex ml-md-3 mr-md-3">
+          <div class="card custom-card h-100 gradient-br-tl w-100">
+            <span class="overlay1"></span>
+            <span class="overlay2"></span>
+            <img src="images/Nazareth.jpg" class="card-img-top img-thumbnail" alt="Jericho" style="min-height: 500px;">
+            <div class="card-body position-relative pr-5">
+              <a href="#" class="btn btn-primary btn-sm position-absolute" style="top:1rem; right:0.5rem;">Learn
+                More</a>
+              <h5 class="card-title">Jericho</h5>
+              <p class="card-text">Oldest continuously inhabited city</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- 8 ----------------------------------------------------------------------------->
+    <!-- Fixed Background Section -->
+    <div class="fixed-bg-section rounded">
+    </div>
+    <!--  -->
+    <div
+      class="container-fluid bg text-primary  d-flex align-items-center justify-content-center text-center py-md-3 py-sm-2">
+      <h1 class=" font-weight-bold text-primary1">THANKS FOR</h1>
+    </div>
+    <!-- //8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+    <!-- 9 -->
+    <!-- Section 9 -->
+    <div class="container my-5">
+      <div class="row justify-content-center">
+
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="position-relative overflow-hidden hover-grow h-100">
+            <img src="images/Eng1.jpg" class="img-fluid rounded-custom shadow-sm w-100" alt="Jerusalem">
+
+            <!-- Top-left overlay -->
+            <div class="position-absolute text-white p-2"
+              style="top: 10px; left: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 8px;">
+              <h5 class="mb-1">All Thanks and Appreciation</h5>
+              <h6 class="mb-0"><i class="far fa-clock mr-1"></i> October 15, 2020</h6>
+            </div>
+
+            <!-- Bottom-centered profile -->
+            <div class="position-absolute w-100 p-4" style="bottom: 10px; left: 0;">
+              <img src="images/1.png" class="shadow-sm mb-1"
+                style="width: 90px; height: 110px; object-fit: cover; border-radius: 50% / 40%;" alt="Engineer Adam">
+              <div class="text-white" style="text-shadow: 0 0 3px black;">
+                <h6 class="mb-0">Engineer Adam Adam</h6>
+                <small>Director of UNIX/UX</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="position-relative overflow-hidden hover-grow h-100">
+            <img src="images/Eng2.jpg" class="img-fluid rounded-custom shadow-sm w-100" alt="Bethlehem">
+
+            <div class="position-absolute text-white p-2"
+              style="top: 10px; left: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 8px;">
+              <h5 class="mb-1">Special Tribute</h5>
+              <h6 class="mb-0"><i class="far fa-clock mr-1"></i> November 20, 2020</h6>
+            </div>
+
+            <div class="position-absolute w-100 p-4" style="bottom: 10px; left: 0;">
+              <img src="images/2.png" class="shadow-sm mb-1"
+                style="width: 90px; height: 110px; object-fit: cover; border-radius: 50% / 40%;" alt="Engineer Sara">
+              <div class="text-white" style="text-shadow: 0 0 3px black;">
+                <h6 class="mb-0">Engineer Sari Ali</h6>
+                <small>Lead UI Architect</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="position-relative overflow-hidden hover-grow h-100">
+            <img src="images/Eng5.jpg" class="img-fluid rounded-custom shadow-sm w-100" alt="Hebron">
+
+            <div class="position-absolute text-white p-2"
+              style="top: 10px; left: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 8px;">
+              <h5 class="mb-1">With Gratitude</h5>
+              <h6 class="mb-0"><i class="far fa-clock mr-1"></i> December 5, 2020</h6>
+            </div>
+
+            <div class="position-absolute w-100 p-4" style="bottom: 10px; left: 0;">
+              <img src="images/3.png" class="shadow-sm mb-1"
+                style="width: 90px; height: 110px; object-fit: cover; border-radius: 50% / 40%;" alt="Engineer John">
+              <div class="text-white" style="text-shadow: 0 0 3px black;">
+                <h6 class="mb-0">Engineer John Doe</h6>
+                <small>Backend Systems Lead</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- //9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+
+    <!-- 10 ---------------------------------------------------------------------------------------->
+    <div
+      class="container-fluid bg text-primary  d-flex align-items-center justify-content-center text-center py-md-3 py-sm-2 ">
+      <h1 class="text-primary1 font-weight-bold ">Palestine News</h1>
+    </div>
+
+    <div class="container my-5" style="max-width: 1200px;">
+      <div class="row no-gutters  shadow-sm rounded-custom custom-card pl-5 bg-light ">
+
+        <!-- Text Column -->
+        <div class="col-md-8 text-col">
+
+          <h3 class="font-weight-bold">Podcast Title</h3>
+          <p class="text-muted">
+            <i class="fas fa-calendar-alt mr-2"></i>Mon, May 25th 2020
+          </p>
+
+
+          <!-- Underline -->
+          <div class="bg-primary mb-3" style="width: 80px; height: 4px; border-radius: 5px;"></div>
+
+          <!-- Description -->
+          <p>
+            Welcome to Palestine News your trusted source for real-time updates.
+            We bring you breaking headlines, expert analysis, and on-the-ground reports.
+            Hear from journalists, activists, and everyday people living the reality.
+            Explore the political, humanitarian, and cultural dimensions of the region.
+            Stay informed with balanced coverage and powerful storytelling.
+            Subscribe now to never miss.
+          </p>
+
+          <!-- Tags & Button -->
+          <div class="mt-3">
+            <span class="badge badge-secondary btn-zoom-dark">
+              <i class="fas fa-podcast"></i> Podcast
+            </span>
+            <span class="badge badge-secondary  btn-zoom-dark">
+              <i class="far fa-clock"></i> 55 mins
+            </span>
+            <a href="#" class="badge badge-secondary btn-zoom-blue">
+              <i class="fas fa-play"></i> Play Episode
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Column (Full Height + Trapezoid) -->
+        <div class="col-md-4 image-col d-none d-md-block">
+          <img src="images/3.jpg" class="trapezoid-img" alt="Podcast Image">
+        </div>
+      </div>
+    </div>
+
+    <!-- //10 -->
+    <!-- 10-2 -->
+
+    <div class="container my-5" style="max-width: 1200px;">
+      <div class="row no-gutters bg-light shadow-sm rounded-custom custom-card ">
+
+        <!-- Image Column (Left) -->
+        <div class="col-md-4 image-col d-none d-md-block">
+          <img src="images/1.jpg" class="trapezoid-img-left" alt="Podcast Image">
+        </div>
+
+        <!-- Text Column (Right) -->
+        <div class="col-md-8 text-col">
+          <h3 class="font-weight-bold">Podcast Title</h3>
+          <p class="text-muted">
+            <i class="fas fa-calendar-alt mr-2"></i>Tue, May 26th 2020
+          </p>
+
+          <div class="bg-danger mb-3" style="width: 80px; height: 4px; border-radius: 5px;"></div>
+
+          <p>
+            Welcome to Palestine News your trusted source for real-time updates.
+            We bring you breaking headlines, expert analysis, and on-the-ground reports.
+            Hear from journalists, activists, and everyday people living the reality.
+            Explore the political, humanitarian, and cultural dimensions of the region.
+            Stay informed with balanced coverage and powerful storytelling.
+            Subscribe now to never miss.
+          </p>
+
+          <div class="mt-3">
+            <span class="badge badge-secondary btn-zoom-dark">
+              <i class="fas fa-podcast"></i> Podcast
+            </span>
+            <span class="badge badge-secondary btn-zoom-dark">
+              <i class="far fa-clock"></i> 55 mins
+            </span>
+            <a href="#" class="badge badge-secondary btn-zoom-red">
+              <i class="fas fa-play"></i> Play Episode
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- //10-2 -->
+    <!-- 10-3 -->
+    <div class="container my-5" style="max-width: 1200px;">
+      <div class="row no-gutters bg-light shadow-sm rounded-custom custom-card pl-5">
+
+        <!-- Text Column -->
+        <div class="col-md-8 text-col">
+
+          <h3 class="font-weight-bold">Podcast Title</h3>
+          <p class="text-muted">
+            <i class="fas fa-calendar-alt mr-2"></i>Wen, May 27th 2020
+          </p>
+
+
+          <!-- Underline -->
+          <div class="bg-success mb-3" style="width: 80px; height: 4px; border-radius: 5px;"></div>
+
+          <!-- Description -->
+          <p>
+            Welcome to Palestine News your trusted source for real-time updates.
+            We bring you breaking headlines, expert analysis, and on-the-ground reports.
+            Hear from journalists, activists, and everyday people living the reality.
+            Explore the political, humanitarian, and cultural dimensions of the region.
+            Stay informed with balanced coverage and powerful storytelling.
+            Subscribe now to never miss.
+          </p>
+
+          <!-- Tags & Button -->
+          <div class="mt-3">
+            <span class="badge badge-secondary btn-zoom-dark">
+              <i class="fas fa-podcast"></i> Podcast
+            </span>
+            <span class="badge badge-secondary  btn-zoom-dark">
+              <i class="far fa-clock"></i> 55 mins
+            </span>
+            <a href="#" class="badge badge-secondary btn-zoom-green">
+              <i class="fas fa-play"></i> Play Episode
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Column (Full Height + Trapezoid) -->
+        <div class="col-md-4 image-col d-none d-md-block">
+          <img src="images/2.jpg" class="trapezoid-img" alt="Podcast Image">
+        </div>
+      </div>
+    </div>
+
+    <!-- //10-3 -->
+    <!-- 10-4 -->
+    <div class="container my-5" style="max-width: 1200px;">
+      <div class="row no-gutters bg-light shadow-sm rounded-custom custom-card">
+
+        <!-- Image Column (Left) -->
+        <div class="col-md-4 image-col d-none d-md-block">
+          <img src="images/4.jpg" class="trapezoid-img-left" alt="Podcast Image">
+        </div>
+
+        <!-- Text Column (Right) -->
+        <div class="col-md-8 text-col">
+          <h3 class="font-weight-bold">Podcast Title</h3>
+          <p class="text-muted">
+            <i class="fas fa-calendar-alt mr-2"></i>Thu, May 28th 2020
+          </p>
+
+          <div class="bg-warning mb-3" style="width: 80px; height: 4px; border-radius: 5px;"></div>
+
+          <p>
+            Welcome to Palestine News your trusted source for real-time updates.
+            We bring you breaking headlines, expert analysis, and on-the-ground reports.
+            Hear from journalists, activists, and everyday people living the reality.
+            Explore the political, humanitarian, and cultural dimensions of the region.
+            Stay informed with balanced coverage and powerful storytelling.
+            Subscribe now to never miss.
+          </p>
+
+          <div class="mt-3">
+            <span class="badge badge-secondary btn-zoom-dark">
+              <i class="fas fa-podcast"></i> Podcast
+            </span>
+            <span class="badge badge-secondary btn-zoom-dark">
+              <i class="far fa-clock"></i> 55 mins
+            </span>
+            <a href="#" class="badge badge-secondary btn-zoom-yellow">
+              <i class="fas fa-play"></i> 
+                Play Episode
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!--// 10-4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+
+    <!-- 11 ------------------------------------------------------------------------------------>
+    <div
+      class="container-fluid bg text-primary  d-flex align-items-center justify-content-center text-center py-md-3 py-sm-2">
+      <h1 class="text-primary1 font-weight-bold ">JOIN US</h1>
+    </div>
+    <!--  -->
+    <div class="container-fluid text-center my-4 px-md-5 ml-4">
+      <div class="row no-gutters">
+        <!-- Card 1 -->
+        <div class="col-md-3 mb-3">
+          <div class="card shadow-lg h-100 px-2 rounded-custom">
+            <div class="card-body">
+              <h5 class="card-title text-primary font-weight-bold">Subscribe Now</h5>
+              <i class="fa-brands fa-twitter fa-3x my-2 text-primary bg-dark rounded p-2 shadow-lg"></i>
+              <p><a href="#" class="text-primary font-weight-bold">Go to link</a></p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 2 -->
+        <div class="col-md-3 mb-3">
+          <div class="card shadow-lg h-100 rounded-custom">
+            <div class="card-body">
+              <h5 class="card-title text-primary font-weight-bold">Follow</h5>
+              <i class="fa-brands fa-whatsapp fa-3x my-2 text-success fa-3x my-2  bg-dark rounded p-2 shadow-lg"></i>
+              <p><a href="#" class="text-primary text-primary font-weight-bold">Go to link</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-3 mb-3">
+          <div class="card   shadow-lg h-100 rounded-custom">
+            <div class="card-body">
+              <h5 class="card-title text-primary font-weight-bold">Like the Page</h5>
+              <i class="fa-brands fa-linkedin-in fa-3x my-2 text-info fa-3x my-2  bg-dark rounded p-2 shadow-lg"></i>
+
+              <p><a href="#" class="text-primary text-primary font-weight-bold">Go to link</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-3 mb-3 ">
+          <div class="card shadow-lg h-100 rounded-custom">
+            <div class="card-body">
+              <h5 class="card-title text-primary font-weight-bold">Watch Videos</h5>
+
+              <i class="fa-brands fa-instagram fa-3x my-2 text-danger fa-3x my-2  bg-dark rounded p-2 shadow-lg"></i>
+              <p><a href="#" class="text-primary text-primary font-weight-bold">Go to link</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- //11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++>
+    <!-- footer -->
+    <footer class="bg-primary text-white pt-5">
+      <div class="container">
+        <div class="row">
+
+          <!-- Column 1: Good Company -->
+          <div class="col-md-4 text-center mb-4">
+            <!-- Flex wrapper with top & bottom borders -->
+            <div class="d-inline-flex align-items-center 
+              border-top border-bottom border-light 
+              py-2 w-100">
+              <img src="images/company.webp" alt="Good Company Logo" class="rounded-circle"
+                style="width:60px; height:60px;">
+              <h5 class="font-weight-bold mb-0 ml-2">Good Company</h5>
+            </div>
+
+            <ul class="list-unstyled mt-3">
+              <li class="mb-2">
+                <span class="font-weight-bold">Tel:</span> 999.999.999
+              </li>
+              <li class="mb-2">
+                <span class="font-weight-bold">Address:</span> QUDS
+              </li>
+              <li class="mb-0">
+                <span class="font-weight-bold">Fax:</span> 999.999.999
+              </li>
+            </ul>
+
+
+          </div>
+
+
+          <!-- Column 2: Important Links -->
+          <div class="col-md-4 text-center mb-4">
+            <div class="d-inline-flex align-items-center 
+              border-top border-bottom border-light 
+              py-2 w-100">
+              <!-- <div class="d-inline-flex align-items-center mb-3"> -->
+              <img src="images/links.webp" alt="Important Links Icon" class="rounded-circle"
+                style="width:60px; height:60px;">
+              <h5 class="font-weight-bold mb-0 ml-2">Important Links</h5>
+            </div>
+            <ul class="list-unstyled mt-3 hover-white">
+              <li class="mb-2 text-dark font-weight-bold cursor-pointer">Visit Us</li>
+              <li class="mb-2 text-dark font-weight-bold cursor-pointer">Take a look</li>
+              <li class="mb-2 text-dark font-weight-bold cursor-pointer">Your health is more important</li>
+            </ul>
+
+
+
+
+          </div>
+
+          <!-- Column 3: Vision -->
+          <div class="col-md-4 text-center mb-4">
+            <div class="d-inline-flex align-items-center 
+              border-top border-bottom border-light 
+              py-2 w-100">
+              <img src="images/vision.jpg" alt="Vision Icon" class="rounded-circle" style="width:60px; height:60px;">
+              <h5 class="font-weight-bold mb-0 ml-2">Vision</h5>
+            </div>
+            <ul class="list-unstyled mt-3">
+              <li class="mb-2">Services for all</li>
+              <li class="mb-2">Provide best services</li>
+              <li>you will be better than before</li>
+            </ul>
+
+          </div>
+
+        </div><!-- /.row -->
+
+        <!-- Footer bottom -->
+
+
+        <h3 class="text-primary1 text-center pb-2 border-top mt-4 pb-5 pt-3">
+          &copy; 2020 <strong>ADAM AHMED ADAM</strong> — Good Company. All rights reserved.
+        </h3>
+
+    </footer>
+
+
+
+    <!-- //footer -->
+
+
+
+  </div><!-- //container -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <!-- jQuery (required for Bootstrap 4) -->
+  <script src="scripts/main.js"></script>
+
+</body>
+
+</html>
